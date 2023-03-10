@@ -1,23 +1,23 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { AccountList } from "./MockingBaseClassMethod";
-import Data from "../DataService/Data";
+import { AnimalRace } from "./MockingBaseClassMethod";
+import Organism from "../DataService/Organism";
 
-const mockgetAccountAt = jest.fn();
-jest.mock("../DataService/Data");
+//OK you can mock the base class by name
+jest.mock("../DataService/Organism");
 
 describe("AccountList", () => {
   beforeEach(() => {
-    Data.mockImplementation(() => {
-      return { getAccountAt: (idex) => `mocked getAccountAt-${idex}` };
+    Organism.mockImplementation(() => {
+      return { reportPositionAtT: (t) => 56 };
     });
-    render(<AccountList />);
+    render(<AnimalRace />);
   });
 
-  test("renders home page", () => {
+  test("renders Animal race page", () => {
     //screen.debug();
     debugger;
-    const acctList = screen.getByTestId("account-list");
-    expect(acctList).toHaveTextContent("mocked getAccountAt-1");
+    const shrewSpan = screen.getByTestId("shrew-span");
+    expect(shrewSpan).toHaveTextContent("56");
   });
 });

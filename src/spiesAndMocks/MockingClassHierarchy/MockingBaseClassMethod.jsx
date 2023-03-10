@@ -8,18 +8,19 @@ const AnimalRace = () => {
   const [shrewPosition, setShrewPosition] = useState(0);
   useEffect(() => {
     const shrew = new Shrew();
-
-    setShrewPosition(shrew.reportPositionAtT(3));
-
     const junco = new Junco();
+
     setJuncoPosition(junco.reportPositionAtT(3));
+    setShrewPosition(shrew.reportPositionAtT(3));
   }, []);
 
   return (
     <>
-      <h1 data-testid="h1-1">Junco and Shrew inherit from Organism</h1>
+      <h1>Junco and Shrew inherit from Organism</h1>
       <h2>At T = 3</h2>
-      <div>The shrew is at {shrewPosition}</div>
+      <div>
+        The shrew is at <span data-testid="shrew-span">{shrewPosition}</span>
+      </div>
       <div>The junco is at {juncoPosition}</div>
     </>
   );
