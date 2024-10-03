@@ -1,12 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
-import {AnimalRace} from "./spiesAndMocks/MockingClassHierarchy/MockingBaseClassMethod";
+import Container from "./spiesAndMocks/DataService/MockingContext/Container";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <AnimalRace />
+      <Container />
     </div>
   );
 }
