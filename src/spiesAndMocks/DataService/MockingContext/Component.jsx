@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { StarsContext } from "./useStars";
+import { useStarsContext } from "./useStars";
 
 const Component = () => {
-    const { stars } = useContext(StarsContext);
+    const {stars}  = useStarsContext();
     return <div data-testid="my-div">{stars.star} Component</div>
 }
 
