@@ -3,9 +3,11 @@ import Component from "./Component";
 import { StarsProvider } from "./useStars";
 
 const Container = () => {
-    return (<div>
-        <StarsProvider><Component /></StarsProvider>
-    </div>)
+    return (
+        <StarsProvider>
+            < Component />
+        </StarsProvider>
+    )
 }
 
 export default Container;
