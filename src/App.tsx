@@ -1,11 +1,11 @@
 import React from 'react';
-import Container from "./spiesAndMocks/DataService/MockingContext/Container";
+import Component from "./spiesAndMocks/DataService/MockingES6Module/Component";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Container />
+      <Component />
     </div>
   );
 }
